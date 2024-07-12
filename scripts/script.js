@@ -1,7 +1,7 @@
 //#region initialization of global variables
 const AI_API_KEY = "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";
 const AI_API_URL = "https://api.openai.com/v1/chat/completions";
-const articleAPIEndpoint = "https://newsapi.org/v2/everything?q=crypto%20OR%20cryptocurrency&sortBy=publishedAt&language=en&apiKey=57cbcbd3ab454687a15141bf13bd74c2";
+const articleAPIEndpoint = "https://js-api-app-backend.vercel.app/api/v1/news";
 const assetsEndpoint="https://api.coincap.io/v2/assets";
 let coinDropdown=document.getElementById("symbols");
 let chatHistory=[{"role":"assistant", "content": "Hello! I am your assistant. How may I help you today?"}];
