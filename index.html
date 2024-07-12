@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="scripts/script.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles/styles.css">
+        <title>Simple Crypto Watcher</title>
+    </head>
+    <body>
+        <div class="loadingScreen">
+            <h1 class="loadingText commonColor">Simple Crypto News and Prices Loading</h1>
+            <img src="img/Spin.gif" alt="LoadingCircle" class="loadingCircle">
+        </div>
+        <header class="appName commonColor"><h1>A simple crypto news and price tracker</h1><h3 class="descriptionText commonFont commonColor">This is a web application you can use to keep ahead of crypto news and keep track of coin prices.</h3></header>
+        <div class="scrollTextDiv"><h3 class="topTen commonFont commonColor"></h3></div>
+        <div class="motherDiv">
+            <div class="content leftContent"> <!--Prices of coins, dropdown to select and show other coins-->
+                <div class="dropdownDescriptionDiv grayBorder trackDesc"><h3 class="commonFont commonColor">Use the dropdown menu here to add coins to track. Updates every 10 seconds</h3></div>
+                <header class="infoHeader fullwidth">
+                    <div class="leftTitleDiv">
+                        <h2 class="leftTitle commonFont commonColor">Today's prices</h2>
+                    </div>
+                    <div class="infobuttondiv coinDropdown"><select name="symbols" id="symbols"></select></div>
+                    <div class="infoButtonDivplus commonFont"><h3>BTC</h3></div>
+                    <div class="infoButtonDivplus commonFont"><h3>ETH</h3></div>
+                </header>
+                <div class="btcusd prices"><!--Obligatory btc part-->
+                    <h2 class="infoHead priceLabel commonFont commonColor">BTC</h2>
+                    <p class="infoPrice btcprice commonFont commonColor">Price USD:</p>
+                    <p class="infoSupply btcsupply commonFont commonColor">Supply:</p>
+                    <p class="infoVolume btcvolume commonFont commonColor">Volume:</p>
+                </div>
+                <div class="ethusd prices"><!--Obligatory eth part-->
+                    <h2 class="infoHead priceLabel commonFont commonColor">ETH</h2>
+                    <p class="infoPrice ethprice commonFont commonColor">Price USD:</p>
+                    <p class="infoSupply ethsupply commonFont commonColor">Supply:</p>
+                    <p class="infoVolume ethvolume commonFont commonColor">Volume:</p>
+                </div>
+            </div>
+            <div class="content newsContainer"><!--News-->
+                <h2 class="commonFont commonColor">Latest Trending News</h2>
+                <div class="newsSlide grayBorder subDivWidth"><!--News Slideshow auto next-->
+                    <img class="slideItem">
+                    <img class="slideItem">
+                    <img class="slideItem">
+                    <img class="slideItem">
+                    <img class="slideItem">
+                    <div class="slideNav fullwidth">
+                        <button class="slideButton slidePrevButton" id="previousSlide"><</button>
+                        <button class="slideButton slideNextButton" id="nextSlide">></button>
+                    </div>
+                    <div class="articleLinkDiv fullwidth">
+                        <a href="" class="slideArticleName commonFont" id="slideArticleLink" target="_blank">aaaaaa</a>
+                        <p class="small author commonFont commonColor"></p>
+                        <p class="small source commonFont commonColor"></p>
+                    </div>
+                </div>
+                <h2 class="commonFont commonColor">Other Articles</h2> <!--95 other articles gathered in the past 24 hours-->
+                <div class="articleList grayBorder subDivWidth roundedCorner">
+                    <header class="otherArticleHead commonFont fullwidth">News Articles from the past 24 hours</header>
+                    <div class="article"><a href="" class="otherArticleLinks commonFont" target="_blank">aaaaaa</a> </div>
+                    <div class="article"><a href="" class="otherArticleLinks commonFont" target="_blank">aaaaaa</a> </div>
+                    <div class="article"><a href="" class="otherArticleLinks commonFont" target="_blank">aaaaaa</a> </div>
+                    <div class="article"><a href="" class="otherArticleLinks commonFont" target="_blank">aaaaaa</a> </div>
+                    <div class="article"><a href="" class="otherArticleLinks commonFont" target="_blank">aaaaaa</a> </div>
+                    <div class="article"><a href="" class="otherArticleLinks commonFont" target="_blank">aaaaaa</a> </div>
+                    <div class="article"><a href="" class="otherArticleLinks commonFont" target="_blank">aaaaaa</a> </div>
+                    <div class="article"><a href="" class="otherArticleLinks commonFont" target="_blank">aaaaaa</a> </div>
+                    <div class="article"><a href="" class="otherArticleLinks commonFont" target="_blank">aaaaaa</a> </div>
+                    <div class="article"><a href="" class="otherArticleLinks commonFont" target="_blank">aaaaaa</a> </div>
+                    <footer class="otherArticleFoot commonFont fullwidth"> <!--Navigate through pages with the next and previous buttons-->
+                        <label for="pageNum">Page Number:</label>
+                        <input type="text" id="pageNum">
+                        <button class="prevPageButton pageButton"><</button>
+                        <button class="nextPageButton pageButton">></button>
+                    </footer>
+                </div>
+            </div>
+            <div class="aiAssist content grayBorder"> <!--AI Assistant for any other needs-->
+                <div class="assistDescriptionDiv grayBorder assistDesc"><h3 class="assistDescriptionText commonFont commonColor">Consult the assistant here for just about anything!</h3></div>
+                <header class="infoHeader fullwidth commonColor commonFont">
+                    <div class="aiAssistHeader"><h2 class="leftTitle commonFont commonColor">Assistant</h2><p class="small commonFont commonColor">powered by GPT3.5</p></div>
+                </header>
+                <div class="chatHistory grayBorder"></div>
+                <footer class="aiAssistFooter">
+                    <input type="text" class="aiInput" placeholder="Ask something...">
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>
