@@ -154,8 +154,8 @@ function displayOtherArticles(response, pageCounter=0, articleCounter=5){
     function populateOtherArticles(){
       for(let i = 0; i<10;i++){
         if(i+articleCounter<100){
-          tempTitle=trimTitle(response.articles[i+articleCounter].title, 77);
-          articleList[i].href=response.articles[i+articleCounter].url;
+          tempTitle=trimTitle(response.articles.articles[i+articleCounter].title, 77);
+          articleList[i].href=response.articles.articles[i+articleCounter].url;
           articleList[i].innerText=tempTitle;
         }
         else{
@@ -180,7 +180,7 @@ function displayOtherArticles(response, pageCounter=0, articleCounter=5){
 
 //#region get news
 const getArticles = async ()=>{
-  const response = await fetch(articleAPIEndpoint, {
+  const response = await fetch("http://127.0.0.1:8080/api/v1/news", {
     method:"GET"
   });
   return response.json();
@@ -372,14 +372,15 @@ function updateDropdownPrices(){
 
 //#region newsArticles
 getArticles().then((response)=>{
+  console.log(response)
   for(let i =0; i<5; i++){ //initialize slide related variables 
-    slideImages[i].src=response.articles[i].urlToImage;
+    slideImages[i].src=response.articles.articles[i].urlToImage;
     slideImages[i].alt="News Article Image";
-    tempTitle=trimTitle(response.articles[i].title, 75);
+    tempTitle=trimTitle(response.articles.articles[i].title, 75);
     slideArticleTitles.push(tempTitle);
-    slideArticleLinks.push(response.articles[i].url);
-    slideArticleAuthors.push(response.articles[i].author);
-    slideArticleSources.push(response.articles[i].source.name);
+    slideArticleLinks.push(response.articles.articles[i].url);
+    slideArticleAuthors.push(response.articles.articles[i].author);
+    slideArticleSources.push(response.articles.articles[i].source.name);
   }
   displayLatest(slideIndex); //display news slideshow
   slideNavigatorDiv.style.display="flex";
