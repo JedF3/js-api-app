@@ -180,7 +180,7 @@ function displayOtherArticles(response, pageCounter=0, articleCounter=5){
 
 //#region get news
 const getArticles = async ()=>{
-  const response = await fetch("http://127.0.0.1:8080/api/v1/news", {
+  const response = await fetch(articleAPIEndpoint, {
     method:"GET"
   });
   return response.json();
